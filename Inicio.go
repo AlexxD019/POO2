@@ -9,6 +9,8 @@
 package main
 
 import (
+
+	//librerias
 	"bufio"
 	"fmt"
 	"os"
@@ -45,6 +47,8 @@ func menuInicio(db *sql.DB) {
 		switch opcion {
 		case 1:
 
+			//reader declaramos con bufio para leer y recibir datos del teclado
+
 			reader := bufio.NewReader(os.Stdin)
 
 			//Iniciadores
@@ -71,17 +75,15 @@ func menuInicio(db *sql.DB) {
 			//Solicito la ID del autor en caso de que exista
 			var op int
 
-			fmt.println (AutorListado(db))
-			fmt.Println("Presione 1 y Digite el ID del autor que desea ingresar")
-			fmt.println("En caso de que no conste en la lista digite 2")
-			fmt.Scan(&listautores)
+			//	fmt.println (AutorListado(db))
+			//fmt.Println("Presione 1 y Digite el ID del autor que desea ingresar")
+			//fmt.println("En caso de que no conste en la lista digite 2")
+			//fmt.Scan(&listautores)
 
-			switch op
+			switch op {
 			case 1:
 				fmt.Println("Ingrese la ID correspondiente al autor")
-				
-
-
+			}
 
 			//Solicito el Nombre de Autor
 			fmt.Println("Nombre del Autor: (solo nombres) ")
@@ -96,13 +98,11 @@ func menuInicio(db *sql.DB) {
 
 			//Imprimo la informacion sobre el libro
 			/* fmt.Println(
-				nlibro.GetTitulo(),
-				nlibro.GetFecha(),
-				nautor.GetNombre(),
-				nautor.GetApellido(),
-				nautor.GetIdAutor()) */
-
-
+			nlibro.GetTitulo(),
+			nlibro.GetFecha(),
+			nautor.GetNombre(),
+			nautor.GetApellido(),
+			nautor.GetIdAutor()) */
 
 			nlibro.IngresoLibro(db)
 			nautor.IngresoAutor(db)
